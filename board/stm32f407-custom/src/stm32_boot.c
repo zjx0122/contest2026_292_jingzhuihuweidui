@@ -55,6 +55,33 @@
 
 void stm32_boardinitialize(void)
 {
+  /* ============================================================
+   * 最早阶段：纯寄存器操作点亮 PA1 LED
+   * 不依赖任何 NuttX API，确认芯片活着
+   * ============================================================ */
+
+  /* 使能 GPIOA 时钟: RCC_AHB1ENR bit0 */
+
+  volatile uint32_t *rcc_ahb1enr = (volatile uint32_t *)0x40023830;
+  *rcc_ahb1enr |= (1 << 0);
+
+  /* PA1 设为通用输出: GPIOA_MODER[3:2] = 01 */
+
+  volatile uint32_t *gpioa_moder = (volatile uint32_t *)0x40020000;
+  *gpioa_moder &= ~(3 << 2);
+  *gpioa_moder |=  (1 << 2);
+
+  /* PA1 输出推挽、高速: GPIOA_OSPEEDR[3:2] = 10 */
+
+  volatile uint32_t *gpioa_ospeedr = (volatile uint32_t *)0x40020008;
+  *gpioa_ospeedr &= ~(3 << 2);
+  *gpioa_ospeedr |=  (2 << 2);
+
+  /* PA1 输出高电平: GPIOA_ODR bit1 = 1 */
+
+  volatile uint32_t *gpioa_odr = (volatile uint32_t *)0x40020014;
+  *gpioa_odr |= (1 << 1);
+
 #if defined(CONFIG_STM32_SPI1) || defined(CONFIG_STM32_SPI2) || defined(CONFIG_STM32_SPI3)
   /* Configure SPI chip selects if 1) SPI is not disabled, and 2) the weak
    * function stm32_spidev_initialize() has been brought into the link.
