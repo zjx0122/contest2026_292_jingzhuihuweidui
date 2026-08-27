@@ -36,7 +36,7 @@
 #include "arm_internal.h"
 #include "stm32.h"
 #include "stm32_can.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #ifdef CONFIG_CAN
 

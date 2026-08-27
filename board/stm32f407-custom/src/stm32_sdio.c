@@ -35,7 +35,7 @@
 #include <nuttx/mmcsd.h>
 
 #include "stm32.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #ifdef HAVE_SDIO
 

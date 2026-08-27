@@ -38,7 +38,7 @@
 
 #include "stm32_gpio.h"
 #include "stm32_i2c.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #ifdef CONFIG_PCA9635PW
 

@@ -1,0 +1,7 @@
+############################################################################
+# app/smart_home/Make.defs
+############################################################################
+
+ifneq ($(CONFIG_PACKAGES_DEMOS_SMART_HOME),)
+CONFIGURED_APPS += $(APPDIR)/packages/demos/smart_home
+endif

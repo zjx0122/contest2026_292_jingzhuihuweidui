@@ -38,7 +38,7 @@
 #include "chip.h"
 #include "stm32.h"
 
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #if defined(CONFIG_STM32_SPI1) || defined(CONFIG_STM32_SPI2) || defined(CONFIG_STM32_SPI3)
 

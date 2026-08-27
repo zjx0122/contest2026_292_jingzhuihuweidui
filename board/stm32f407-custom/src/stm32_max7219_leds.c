@@ -34,7 +34,7 @@
 
 #include "stm32.h"
 #include "stm32_spi.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #if defined(CONFIG_SPI) && defined(CONFIG_STM32_SPI1) && \
     defined(CONFIG_LEDS_MAX7219)

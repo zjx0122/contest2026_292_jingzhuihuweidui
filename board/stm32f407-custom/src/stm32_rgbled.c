@@ -37,7 +37,7 @@
 #include "chip.h"
 #include "arm_internal.h"
 #include "stm32_pwm.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 /****************************************************************************
  * Pre-processor Definitions

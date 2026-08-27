@@ -34,7 +34,7 @@
 #include <nuttx/wireless/bluetooth/bt_uart.h>
 
 #include "stm32_hciuart.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #include <arch/board/board.h>
 

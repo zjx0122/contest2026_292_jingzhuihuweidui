@@ -40,7 +40,7 @@
 #include "stm32.h"
 
 #include <arch/board/board.h>
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 /****************************************************************************
  * Pre-processor Definitions

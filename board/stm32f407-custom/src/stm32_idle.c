@@ -40,7 +40,7 @@
 #include "stm32_rcc.h"
 #include "stm32_exti.h"
 
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 /****************************************************************************
  * Pre-processor Definitions

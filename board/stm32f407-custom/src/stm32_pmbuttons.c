@@ -38,7 +38,7 @@
 #include "nvic.h"
 #include "stm32_pwr.h"
 #include "stm32_pm.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #if defined(CONFIG_PM) && defined(CONFIG_ARCH_IDLE_CUSTOM) && defined(CONFIG_PM_BUTTONS)
 

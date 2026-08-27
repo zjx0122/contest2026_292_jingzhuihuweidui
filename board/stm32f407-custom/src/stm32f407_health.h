@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32/stm32f4discovery/src/stm32f4discovery.h
+ * boards/arm/stm32/stm32f4discovery/src/stm32f407_health.h
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -901,6 +901,120 @@ int stm32_gs2200m_initialize(const char *devpath, int bus);
 #ifdef CONFIG_INPUT_DJOYSTICK
 int stm32_djoy_initialize(void);
 #endif
+
+/****************************************************************************
+ * Public Types
+ ****************************************************************************/
+
+/****************************************************************************
+ * Name: stm32_ld2410b_setup
+ *
+ * Description:
+ *   初始化 LD2410B 雷达传感器
+ *
+ * Input Parameters:
+ *   无
+ *
+ * Returned Value:
+ *   成功返回 OK，失败返回负的 errno 值
+ *
+ ****************************************************************************/
+
+#ifdef CONFIG_SENSORS_LD2410B
+int stm32_ld2410b_setup(void);
+#endif
+
+/****************************************************************************
+ * Name: stm32_ld2410b_read
+ *
+ * Description:
+ *   读取 LD2410B 目标数据
+ *
+ * Input Parameters:
+ *   data - 指向目标数据结构体的指针
+ *
+ * Returned Value:
+ *   成功返回 OK，失败返回负的 errno 值
+ *
+ ****************************************************************************/
+
+
+/****************************************************************************
+ * Name: stm32_ld2410b_get_out_pin
+ *
+ * Description:
+ *   读取 LD2410B OUT 引脚状态
+ *
+ * Input Parameters:
+ *   无
+ *
+ * Returned Value:
+ *   返回 OUT 引脚状态（0 = 无人，1 = 有人）
+ *
+ ****************************************************************************/
+
+
+
+
+#ifdef CONFIG_APP_DEMOS_SENSOR_TRANSFER
+int bsp_sht30_get_env(int32_t *temperature, uint32_t *humidity);
+int SHT30_VL53L0X_init(void);
+int bsp_tof_get_distance(uint16_t *dist_mm);
+int SHT30_ReadPeriodic(int32_t *temperature, uint32_t *humidity);
+#endif
+/****************************************************************************
+ * Name: CONFIG_APP_DEMOS_SENSOR_TRANSFER
+ *
+ * Description:
+ *  读取湿度传感器的数据, 
+ *  周期性的采集周围湿度
+ * Input Parameters:
+ *   temperature 参数用于接收温湿度
+ *   humidity 参数用于返回湿度百分比
+ * Returned Value:
+ *   返回 （0 = 通讯正常，-1 = 通讯异常 ）
+ *
+ ****************************************************************************/
+#ifdef CONFIG_APP_DEMOS_SENSOR_TRANSFER
+
+typedef struct
+{
+    bool has_target;
+
+    /* 0=无目标
+     * 1=运动目标
+     * 2=静止目标
+     * 3=运动+静止目标
+     */
+    uint16_t target_state;
+
+    uint16_t move_distance_cm;
+    uint16_t move_energy;
+
+    uint16_t rest_distance_cm;
+    uint16_t rest_energy;
+
+} bsp_radar_data_t;
+
+int bsp_radar_init(void);
+
+int bsp_radar_get_data(bsp_radar_data_t *data);
+
+bool bsp_radar_gpio_is_present(void);
+
+#endif
+
+
+#ifdef CONFIG_ESP32S3_UART
+
+int stm32_esp32s3_setup(void);
+int stm32_esp32s3_send(const uint8_t *data, size_t len);
+int stm32_esp32s3_recv(uint8_t *buf, size_t maxlen);
+int stm32_esp32s3_recv_timeout(uint8_t *buf, size_t maxlen, int timeout_ms);
+int stm32_esp32s3_flush(void);
+bool stm32_esp32s3_is_connected(void);
+
+#endif /* CONFIG_ESP32S3_UART */
 
 #endif /* __ASSEMBLY__ */
 #endif /* __BOARDS_ARM_STM32_STM32F4DISCOVERY_SRC_STM32F4DISCOVERY_H */

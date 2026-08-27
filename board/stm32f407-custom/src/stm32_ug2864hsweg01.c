@@ -36,7 +36,7 @@
 #include "stm32_gpio.h"
 #include "stm32_spi.h"
 
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #ifdef CONFIG_LCD_UG2864HSWEG01
 
@@ -81,7 +81,7 @@
  * -------------------------------------------------------------------------
  */
 
-/* Definitions in stm32f407-custom.h */
+/* Definitions in stm32f407_health.h */
 
 /****************************************************************************
  * Public Functions

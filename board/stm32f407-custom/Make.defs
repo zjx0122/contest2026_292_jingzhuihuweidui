@@ -1,0 +1,10 @@
+# boards/arm/stm32/stm32f407_health/Make.defs
+
+# 链接脚本路径
+LDSCRIPT = boards/arm/stm32/stm32f407_health/scripts/stm32f407vgt6.ld
+
+# 板子C源码
+BOARD_SRCS += src/stm32_boot.c src/stm32_bringup.c
+
+# 是否支持apps应用，这个是关键！
+CONFIG_APPS_BOARD_SUPPORT=y

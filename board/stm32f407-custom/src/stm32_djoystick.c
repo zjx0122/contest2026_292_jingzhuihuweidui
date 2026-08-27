@@ -35,7 +35,7 @@
 #include <nuttx/input/djoystick.h>
 
 #include "stm32_gpio.h"
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #ifdef CONFIG_INPUT_DJOYSTICK
 

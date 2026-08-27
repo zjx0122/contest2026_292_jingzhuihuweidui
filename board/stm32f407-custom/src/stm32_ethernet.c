@@ -49,7 +49,7 @@
 #include "stm32_gpio.h"
 #include "stm32_eth.h"
 
-#include "stm32f407-custom.h"
+#include "stm32f407_health.h"
 
 #if defined(CONFIG_STM32F4DISBB) && defined(CONFIG_STM32_ETHMAC)
 

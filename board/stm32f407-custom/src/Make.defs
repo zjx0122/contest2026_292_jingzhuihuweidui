@@ -189,6 +189,14 @@ ifeq ($(CONFIG_USBDEV_COMPOSITE),y)
   CSRCS += stm32_composite.c
 endif
 
+ifeq ($(CONFIG_SENSORS_LD2410B),y)
+  CSRCS += stm32_ld2410b.c
+endif
+
+ifeq ($(CONFIG_ESP32S3_UART),y)
+  CSRCS += stm32_esp32s3.c
+endif
+
 DEPPATH += --dep-path board
 VPATH += :board
 CFLAGS += ${INCDIR_PREFIX}$(TOPDIR)$(DELIM)arch$(DELIM)$(CONFIG_ARCH)$(DELIM)src$(DELIM)board$(DELIM)board
