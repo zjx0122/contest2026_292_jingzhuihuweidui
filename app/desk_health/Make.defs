@@ -1,0 +1,7 @@
+############################################################################
+# desk_health - Make.defs
+############################################################################
+
+ifneq ($(CONFIG_EXAMPLES_DESK_HEALTH),)
+CONFIGURED_APPS += $(APPDIR)/examples/desk_health
+endif
