@@ -11,7 +11,6 @@
   <project path="contest2026_292_jingzhuihuweidui" name="contest2026_292_jingzhuihuweidui">
     <linkfile src="app/hello_app" dest="packages/demos/contest2026_292_hello_app"/>
     <linkfile src="quickapp/hello_quickapp" dest="packages/apps/contest2026_292_hello_quickapp"/>
-    <linkfile src="board/contest_board" dest="vendor/openvela/boards/contest2026_292_board"/>
     <linkfile src="app/desk_health" dest="packages/demos/desk_health"/>
     <linkfile src="board/stm32f407_health" dest="vendor/openvela/boards/stm32f407_health"/>
   </project>

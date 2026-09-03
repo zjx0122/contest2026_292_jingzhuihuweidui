@@ -3,7 +3,7 @@
 #include <nuttx/config.h>
 #include <stdio.h>
 #include "desk_health.h"
-
+#include "ui_arrat.h"
 void ui_draw_alert_popup(enum alert_level_e level,
                          enum posture_state_e trigger)
 {
